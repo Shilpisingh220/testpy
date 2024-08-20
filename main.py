@@ -1,6 +1,9 @@
 def reverse_char(char):
     alphabets = 'abcdefghijklmnopqrstuvwxyz'
 
+    if char not in alphabets and char not in alphabets.upper():
+        return char
+
     if char in alphabets.upper():
         alphabets = alphabets.upper()
 
@@ -15,15 +18,20 @@ def reverse_char(char):
 # print(reverse('b') == 'y')
 # print(reverse('c') == 'x')
 
-print(reverse_char('a') == 'z')
-print(reverse_char('A') == 'z')
+# print(reverse_char('a') == 'z')
+# print(reverse_char('A') == 'z')
 
 
 def atbash(txt):
+    reverseTxt = ""
     for char in txt:
-        print(char)
+        reverseTxt += reverse_char(char)
+    return reverseTxt
 
-atbash('hello')       
+atbash('christmas 13')
+atbash('Hello') 
+
+print(atbash("hello world!") == "svool dliow!")
 
 
 
